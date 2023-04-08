@@ -65,7 +65,7 @@ public class WrapperClassesExample {
 		Integer someInteger = Integer.valueOf(10);
 		int someInt = someInteger;
 
-		System.out.println("WrapperClassesExample -> testAutoboxing:");
+		System.out.println("WrapperClassesExample -> testAutounboxing:");
 		System.out.println("someInteger: " + someInteger);
 		System.out.println("someInt: " + someInt);
 		System.out.println("========================================");
