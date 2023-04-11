@@ -102,8 +102,11 @@ public class ArraysStructuresExample {
 		System.out.println("========================================");
 	}
 
-	// Argumento de tamanho variável devem ser o último.
-	// Recebe um array literal como argumento.
+	/*
+	 * varargs (Desde o Java 1.5).
+	 * Argumento de tamanho variável devem ser o último.
+	 * Recebe um array literal como argumento.
+	 */
 	public int getLengthVarArg(int defaultValue, String... args) {
 		System.out.println("ArraysStructuresExample -> getLengthVarArg:");
 		System.out.println(Arrays.toString(args));
