@@ -1,4 +1,4 @@
-package com.fundamentals.wrappers;
+package com.algaworks.course.fjoo.wrappers;
 
 public class WrapperClassesExample {
 

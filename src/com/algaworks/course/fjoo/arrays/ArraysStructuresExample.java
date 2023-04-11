@@ -1,4 +1,4 @@
-package com.fundamentals.arrays;
+package com.algaworks.course.fjoo.arrays;
 
 import java.util.Arrays;
 
