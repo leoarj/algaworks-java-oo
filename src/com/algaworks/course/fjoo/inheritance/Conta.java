@@ -1,7 +1,7 @@
 package com.algaworks.course.fjoo.inheritance;
 
 /*
- * Em Java, todas as classes estender de java.lang.Object,
+ * Em Java, todas as classes estendem de java.lang.Object,
  * ou seja, a classe Conta implicitamente estende de Object.
  * (public class Conta extends Object) -> Não nessária essa declaração.
  */
