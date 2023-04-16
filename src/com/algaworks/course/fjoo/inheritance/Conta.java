@@ -105,6 +105,7 @@ public abstract class Conta {
 	 */
 	public abstract void exibirDetalhes();
 	
+	// Pode ser usado para exibir detalhes comuns
 	protected void exibirDetalhesGerais() {
 		System.out.println("Descrição: " + descricao);
 		System.out.println("Valor: " + valor);
