@@ -1,6 +1,8 @@
 package com.algaworks.course.fjoo.inheritance;
 
-public class Pessoa {
+// Adicionado pacote: com.algaworks.course.fjoo.inheritance.abstraction.
+
+public abstract class Pessoa {
 	protected String nome;
 
 	public String getNome() {

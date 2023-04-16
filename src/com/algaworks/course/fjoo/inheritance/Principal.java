@@ -1,5 +1,7 @@
 package com.algaworks.course.fjoo.inheritance;
 
+import com.algaworks.course.fjoo.inheritance.abstraction.RelatorioContas;
+
 // Classe de teste fornecida pelo exemplo.
 
 public class Principal {
@@ -43,6 +45,13 @@ public class Principal {
 		// recebimento e cancelamento de contas a receber
 		contaReceber1.receber();
 		contaReceber2.cancelar();
+		
+		// Adicionado pacote: com.algaworks.course.fjoo.inheritance.abstraction.
+		
+		// exibe listagem de todas as contas com detalhamento
+		RelatorioContas relatorio = new RelatorioContas();
+		Conta[] contas = new Conta[]{contaPagar1, contaPagar2, contaReceber1, contaReceber2};
+				
+		relatorio.exibirListagem(contas);
 	}
-
 }

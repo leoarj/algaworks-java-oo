@@ -56,4 +56,11 @@ public class ContaReceber extends Conta {
 			}
 		}
 	}
+
+	@Override
+	public void exibirDetalhes() {
+		System.out.println("Conta à Receber.");
+		super.exibirDetalhesGerais();
+		System.out.println("Cliente: " + cliente.getNome());
+	}
 }
