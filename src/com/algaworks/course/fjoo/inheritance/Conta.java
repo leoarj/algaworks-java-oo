@@ -97,7 +97,7 @@ public abstract class Conta {
 	 * porém podem ser referenciados em outras chamadas dentro da própria classe abstrata.
 	 * 
 	 * Existem várias abordagens, como por exemplo as subclasses escolherem chamar
-	 * um comportamento padrão já implementado na superclasse, ao implementar o método abstrado,
+	 * um comportamento padrão já implementado na superclasse, ao implementar o método abstrato,
 	 * ou a classe abstrata ter um comportamento padrão chamado um comportamento mais específico (método abstrato).
 	 * 
 	 * Métodos abstratos, como o próprio nome diz, não possuem bloco de implementação,
