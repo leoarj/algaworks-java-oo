@@ -29,9 +29,10 @@ public class MegaSenaExample {
 //		}
 		
 		//return resultado;
+		
 		// Pode ser utilizado Arrays.binarySearch();
 		ordenarNumeros(jogo, indexAtual);
-		return Arrays.binarySearch(jogo, numero) >= 0;
+		return Arrays.binarySearch(jogo, 0, indexAtual, numero) >= 0;
 	}
 	
 	private boolean adicionarNumero(int[] jogo, int indexAtual, int numero) {
@@ -45,7 +46,6 @@ public class MegaSenaExample {
 	
 	public void exibirJogos() {
 		for (int i = 0; i < jogos.length; i++) {
-			//Arrays.sort(jogos[i]);
 			ordenarNumeros(jogos[i], jogos[i].length);
 			System.out.println(Arrays.toString(jogos[i]));
 		}
