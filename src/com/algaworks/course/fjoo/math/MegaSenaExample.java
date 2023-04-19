@@ -15,8 +15,12 @@ public class MegaSenaExample {
 		this.jogos = new int[quantidadeJogos - 1][QUANTIDADE_NUMEROS];
 	}
 
-	private void ordenarNumeros(int[] jogo, int indexAtual) {	
+	private void ordenarNumerosParcialmente(int[] jogo, int indexAtual) {	
 		Arrays.sort(jogo, 0, indexAtual);
+	}
+	
+	private void ordenarNumerosCompletamente(int[] jogo) {	
+		Arrays.sort(jogo);
 	}
 	
 	private boolean jaFoiSorteado(int[] jogo, int indexAtual, int numero) {
@@ -29,9 +33,8 @@ public class MegaSenaExample {
 //		}
 		
 		//return resultado;
-		
 		// Pode ser utilizado Arrays.binarySearch();
-		ordenarNumeros(jogo, indexAtual);
+		ordenarNumerosParcialmente(jogo, indexAtual);
 		return Arrays.binarySearch(jogo, 0, indexAtual, numero) >= 0;
 	}
 	
@@ -46,7 +49,7 @@ public class MegaSenaExample {
 	
 	public void exibirJogos() {
 		for (int i = 0; i < jogos.length; i++) {
-			ordenarNumeros(jogos[i], jogos[i].length);
+			ordenarNumerosCompletamente(jogos[i]);
 			System.out.println(Arrays.toString(jogos[i]));
 		}
 	}
