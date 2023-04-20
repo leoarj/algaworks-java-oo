@@ -14,8 +14,11 @@ package com.algaworks.course.fjoo.inheritance;
  * - Unchecked exceptions -> Exceções não checadas, são exceções referentes a erros
  * de execução (runtime exceptions), em que o estado do programa é comprometido,
  * não se tem previsibilidade de quando podem ocorrer, devido a isso,
- * o compilador não obriga necessariamente um bloco tyr-catch para tratar.
+ * o compilador não obriga necessariamente um bloco tyr-catch para tratar,
+ * pois não há como saber que exceções poderão ser lançadas.
  * Caso não haja um bloco try-catch para tratar, o processo em que ela acontece é interrompido.
+ * Uma alternativa seria usar trycatch capturando exception, mas isso pode trazer um tratamento
+ * genérico demais, ou manter em execução um processo já inconsistente.
  * 
  * - Checked exceptions -> Exceções checadas, são exceções referentes a erros de regra de negócio,
  * são erros definidos e já esperados, onde o método chamador deve ter um bloco try-catch para tratamento,
@@ -24,6 +27,10 @@ package com.algaworks.course.fjoo.inheritance;
  * é também um dos possíveis retornos do método, e obriga o método chamador a tratar a excessão,
  * para que o método que chamou possa se recuperar.
  * É possível tratar a exceção ou propagá-la se necessário.
+ * 
+ * Exceptions quebram o fluxo de execução, semelhantemente ao return,
+ * porém retornando elas mesmas como retorno, onde serão tratadas ou propagadas até o caso de interromper
+ * o processo onde executam.
  * 
  * Existem também "errors", que são exceções especiais, usadas pela JVM para controle de recursos.
  * errors também são do tipo unchecked.
