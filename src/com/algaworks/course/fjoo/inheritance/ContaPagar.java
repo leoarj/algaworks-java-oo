@@ -25,7 +25,7 @@ public class ContaPagar extends Conta {
 		this.fornecedor = fornecedor;
 	}
 
-	public void pagar() {
+	public void pagar() throws OperacaoContaException {
 		switch (situacaoConta) {
 			case PENDENTE: {
 				situacaoConta = SituacaoConta.PAGA;
@@ -34,14 +34,18 @@ public class ContaPagar extends Conta {
 				break;
 			}
 			case CANCELADA: {
-				System.out.println("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
+				//System.out.println("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
+						//+ "\" já está cancelada! Não é possível pagar!");
+			throw new OperacaoContaException("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
 						+ "\" já está cancelada! Não é possível pagar!");
-				break;
+				//break;
 			}
 			case PAGA: {
-				System.out.println("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
+				//System.out.println("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
+						//+ "\" já está paga! Não é possível pagar novamente!");
+				throw new OperacaoContaException("Conta à Pagar \"" + descricao + "\" do Fornecedor \"" + fornecedor.getNome()
 						+ "\" já está paga! Não é possível pagar novamente!");
-				break;
+				//break;
 			}
 		}
 	}

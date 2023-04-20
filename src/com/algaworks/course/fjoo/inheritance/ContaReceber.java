@@ -28,15 +28,16 @@ public class ContaReceber extends Conta {
 	// Sobreescrita (sobrecarga) de métodos da superclasse.
 
 	@Override
-	protected void cancelar() {
+	protected void cancelar() throws OperacaoContaException {
 		if (valor <= 50000) {
 			super.cancelar(); // Chamada de comportamento da superclasse.
 		} else {
-			System.out.println("Não é permitido cancelar Conta à Receber com valor maior que R$50.000,00");
+			//System.out.println("Não é permitido cancelar Conta à Receber com valor maior que R$50.000,00");
+			throw new OperacaoContaException("Não é permitido cancelar Conta à Receber com valor maior que R$50.000,00");
 		}
 	}
 
-	public void receber() {
+	public void receber() throws OperacaoContaException {
 		switch (situacaoConta) {
 			case PENDENTE: {
 				situacaoConta = SituacaoConta.PAGA;
@@ -45,14 +46,18 @@ public class ContaReceber extends Conta {
 				break;
 			}
 			case CANCELADA: {
-				System.out.println("Conta à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
+				//System.out.println("Conta à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
+				//		+ "\" já está cancelada! Não é possível receber!");
+				throw new OperacaoContaException("Conta à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
 						+ "\" já está cancelada! Não é possível receber!");
-				break;
+				//break;
 			}
 			case PAGA: {
-				System.out.println("Cont à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
+				//System.out.println("Cont à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
+				//		+ "\" já está paga! Não é possível receber novamente!");
+				throw new OperacaoContaException("Cont à Receber \"" + descricao + "\" do Fornecedor \"" + cliente.getNome()
 						+ "\" já está paga! Não é possível receber novamente!");
-				break;
+				//break;
 			}
 		}
 	}

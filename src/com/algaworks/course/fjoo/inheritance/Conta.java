@@ -73,7 +73,7 @@ public abstract class Conta {
 		return situacaoConta;
 	}
 
-	protected void cancelar() {
+	protected void cancelar() throws OperacaoContaException {
 		switch (situacaoConta) {
 			case PENDENTE: {
 				situacaoConta = SituacaoConta.CANCELADA;
@@ -81,13 +81,15 @@ public abstract class Conta {
 				break;
 			}
 			case CANCELADA: {
-				System.out.println(
-						"Conta \"" + descricao + "\" já está cancelada! Não é possível realizar o cancelamento novamente!");
-				break;
+				//System.out.println(
+				//		"Conta \"" + descricao + "\" já está cancelada! Não é possível realizar o cancelamento novamente!");
+				throw new OperacaoContaException("Conta \"" + descricao + "\" já está cancelada! Não é possível realizar o cancelamento novamente!");
+				//break; Não precisa do break pois a excessão interrompe o fluxo de execução
 			}
 			case PAGA: {
-				System.out.println("Conta \"" + descricao + "\" já está paga! Não é possível realizar o cancelamento!");
-				break;
+				//System.out.println("Conta \"" + descricao + "\" já está paga! Não é possível realizar o cancelamento!");
+				throw new OperacaoContaException("Conta \"" + descricao + "\" já está paga! Não é possível realizar o cancelamento!");
+				//break;
 			}
 		}
 	}
