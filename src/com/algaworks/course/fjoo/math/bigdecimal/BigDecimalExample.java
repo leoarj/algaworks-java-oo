@@ -104,7 +104,8 @@ public class BigDecimalExample {
 			 * Valor deverá ser informado com vírgula, devido ao locale,
 			 * se não obtemos uma java.lang.ClassCastException,
 			 * pois o Java vai entender como um Long,
-			 * tentando fazer um cast de um Long (Calsse wrapper) diretamente para um Double (Calsse wrapper).
+			 * tentando fazer um cast de um Long (Classe wrapper)
+			 * diretamente para um Double (Classe wrapper).
 			 */
 			
 			Double valorConvertido = (Double) numberFormat.parse(value);
