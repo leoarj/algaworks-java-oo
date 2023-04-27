@@ -9,6 +9,6 @@ public class TestBigDecimalExample {
 		
 		example.calculate();
 		example.testFormat(new BigDecimal("7940.14"));
-		example.testParse("400.89");
+		example.testParse("400,89");
 	}
 }
