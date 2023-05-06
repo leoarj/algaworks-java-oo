@@ -26,16 +26,15 @@ public class MegaSenaExampleSortedSet {
 		for (int i = 0; i < quantidadeJogos; i++) {
 			SortedSet<Integer> jogo = new TreeSet<>();
 			
-			for (int j = 1; j < QUANTIDADE_NUMEROS; j++) {
-				int numeroSorteado = random.nextInt(NUMERO_INICIAL, NUMERO_FINAL);
-
-				if (!jogo.add(numeroSorteado)) {
-					j--;
-				}
+			for (int j = 0; j < QUANTIDADE_NUMEROS; j++) {
+				int numeroSorteado;
+				
+				do {
+					numeroSorteado = random.nextInt(NUMERO_INICIAL, NUMERO_FINAL);
+				} while (!jogo.add(numeroSorteado));
 			}
 			
 			jogos.add(jogo);
-			
 		}
 	}
 	
